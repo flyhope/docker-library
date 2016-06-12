@@ -3,7 +3,7 @@ MAINTAINER Leelmes "i@chengxuan.li"
 
 # 复制YUM配置
 COPY ./files/CentOS-Base.repo /etc/yum.repos.d/
-RUN yum makecache
+COPY ./files/epel.repo /etc/yum.repos.d/
 
 # 处理目录
 RUN mkdir -p /data1/
