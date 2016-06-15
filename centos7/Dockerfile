@@ -11,6 +11,17 @@ RUN mkdir -p /data1/
 # 设置特定头颜色
 RUN echo 'PS1="\033[1m\033[36m$PS1\033[0m"' >> /etc/bashrc
 
+# 设置颜色
+if ! (fgrep -q "alias ls" /etc/bashrc); then 
+    echo "alias ls='ls --color'" >> /etc/bashrc
+fi
+
+# 设置环境变量
+ENV LC_ALL en_US.UTF-8
+
+# 设置时区为中国时区
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 # 工作目录
 WORKDIR /data1
 
