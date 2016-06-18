@@ -2,12 +2,12 @@ FROM registry.aliyuncs.com/huati/centos:7
 MAINTAINER Leelmes "chengxuan@staff.weibo.com"
 
 # 安装编译工具
-RUN yum install -y wget gcc gcc-c++ make bzip
+RUN yum install -y wget gcc gcc-c++ make bzip2
 
 # 安装GCC
 RUN mkdir -p /data1/download
 WORKDIR /data1/download
-ADD http://mirrors.ustc.edu.cn/gnu/gcc/gcc-6.1.0/gcc-6.1.0.tar.bz2 /data1/download/
+ADD http://mirrors.ustc.edu.cn/gnu/gcc/gcc-6.1.0/gcc-6.1.0.tar.bz2 /data1/download/gcc-6.1.0.tar.bz2
 RUN tar jxf gcc-6.1.0.tar.bz2
 WORKDIR /data1/download/gcc-6.1.0
 RUN ./contrib/download_prerequisites
