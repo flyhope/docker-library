@@ -8,7 +8,7 @@ RUN yum install -y wget gcc gcc-c++ make
 RUN mkdir -p /data1/download
 WORKDIR /data1/download
 ADD http://mirrors.concertpass.com/gcc/releases/gcc-6.1.0/gcc-6.1.0.tar.gz /data1/download/
-RUN tar zxvf gcc-6.1.0.tar.gz
+RUN tar zxf gcc-6.1.0.tar.gz
 WORKDIR /data1/download/gcc-6.1.0
 RUN ./contrib/download_prerequisites
 RUN ./configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
