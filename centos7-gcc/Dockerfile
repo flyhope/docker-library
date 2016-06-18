@@ -17,5 +17,5 @@ RUN make install
 
 # «Â¿Ì¿¨ª¯
 RUN yum erase wget gcc gcc-c++ make
-RUN yum cleancache
+RUN yum clean all
 RUN rm -Rf /data1/download
