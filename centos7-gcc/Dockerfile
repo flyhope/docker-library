@@ -7,7 +7,7 @@ RUN yum install -y wget gcc gcc-c++ make bzip
 # °²×°GCC
 RUN mkdir -p /data1/download
 WORKDIR /data1/download
-ADD http://mirrors.concertpass.com/gcc/releases/gcc-6.1.0/gcc-6.1.0.tar.bz2 /data1/download/
+ADD http://mirrors.ustc.edu.cn/gnu/gcc/gcc-6.1.0/gcc-6.1.0.tar.bz2 /data1/download/
 RUN tar jxf gcc-6.1.0.tar.bz2
 WORKDIR /data1/download/gcc-6.1.0
 RUN ./contrib/download_prerequisites
