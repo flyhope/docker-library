@@ -1,8 +1,6 @@
 FROM centos:7
 MAINTAINER Leelmes "i@chengxuan.li"
 
-# 复制YUM配置
-:qz
 # 处理目录
 RUN mkdir -p /data1/ && \
 	echo 'PS1="\033[1m\033[36m$PS1\033[0m"' >> /etc/bashrc && \
