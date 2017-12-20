@@ -7,6 +7,7 @@ RUN mkdir -p /data1/ && \
 	echo "alias ls='ls --color'" >> /etc/bashrc && \
 	cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
 	yum install -y epel-release  && \
+	yum make cache && \
 	yum install -y  vim rsync lrzsz python34 python34-setuptools && \
 	yum clean all && \
 	easy_install-3.4 pyyaml && \
