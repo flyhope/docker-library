@@ -5,8 +5,9 @@ MAINTAINER Leelmes "i@chengxuan.li"
 RUN mkdir -p /data1/ && \
 	echo 'PS1="\033[1m\033[36m$PS1\033[0m"' >> /etc/bashrc && \
 	echo "alias ls='ls --color'" >> /etc/bashrc && \
-	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-	yum install -y vim rsync lrzsz python34 python34-setuptools epel-release  && \
+	cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+	yum install -y epel-release  && \
+	yum install -y  vim rsync lrzsz python34 python34-setuptools && \
 	yum clean all && \
 	easy_install-3.4 pyyaml && \
 	echo "set number" >> /etc/vimrc && echo "setlocal cursorline" >> /etc/vimrc
