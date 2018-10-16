@@ -5,7 +5,7 @@ MAINTAINER Leelmes "chengxuan@staff.weibo.com"
 RUN mkdir -p /data1/download
 
 # 安装编译工具
-RUN cd /data1/download && yum install -y wget gcc gcc-c++ make bzip2 && wget -O /data1/download/gcc-6.1.0.tar.bz2 http://mirrors.ustc.edu.cn/gnu/gcc/gcc-6.1.0/gcc-6.1.0.tar.bz2 && tar jxf gcc-6.1.0.tar.bz2 && cd /data1/download/gcc-6.1.0 && ./contrib/download_prerequisites && ./configure --enable-checking=release --enable-languages=c,c++ --disable-multilib && make -j4 && make install && yum -y erase wget gcc gcc-c++ bzip && yum clean all && rm -Rf /data1/download
+RUN cd /data1/download && yum install -y wget gcc gcc-c++ make xz && wget -O /data1/download/gcc-8.2.0.tar.xz http://mirrors.ustc.edu.cn/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz && tar xvf gcc-*.xz && cd /data1/download/gcc-* && ./contrib/download_prerequisites && ./configure --enable-checking=release --enable-languages=c,c++ --disable-multilib && make -j4 && make install && yum -y erase wget gcc gcc-c++ bzip && yum clean all && rm -Rf /data1/download
 
 # 设置工作目录
 WORKDIR /data1/
