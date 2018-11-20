@@ -6,6 +6,7 @@ RUN mkdir -p /data1/download
 
 # 安装编译工具
 RUN cd /data1/download && \
+	yum update && \
     yum install -y wget gcc gcc-c++ make xz && \
     wget -O /data1/download/gcc-8.2.0.tar.xz http://mirrors.ustc.edu.cn/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz && \
     tar xvf gcc-*.xz && cd /data1/download/gcc-* && \
