@@ -7,7 +7,7 @@ RUN mkdir -p /data1/download
 # 安装编译工具
 RUN cd /data1/download && \
 	yum update -y && \
-    yum install -y wget gcc gcc-c++ make xz && \
+    yum install -y wget gcc gcc-c++ make xz bzip2 && \
     echo "Download gcc" && \
     wget -q -O /data1/download/gcc-8.2.0.tar.xz http://www.netgull.com/gcc/releases/gcc-8.2.0/gcc-8.2.0.tar.xz && \
     echo "Unpack gcc" && \
@@ -16,7 +16,7 @@ RUN cd /data1/download && \
     ./configure --enable-checking=release --enable-languages=c,c++ --disable-multilib && \
     make -j4 && \
     make install && \
-    yum -y erase wget gcc gcc-c++ bzip && \
+    yum -y erase wget gcc gcc-c++ bzip2 && \
     yum clean all && \
     cd /data1 && \
     rm -Rf /data1/download
