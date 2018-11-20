@@ -8,7 +8,7 @@ RUN mkdir -p /data1/download
 RUN cd /data1/download && \
 	yum update -y && \
     yum install -y wget gcc gcc-c++ make xz && \
-    wget -O /data1/download/gcc-8.2.0.tar.xz http://mirrors.ustc.edu.cn/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz && \
+    wget -q -O /data1/download/gcc-8.2.0.tar.xz http://www.netgull.com/gcc/releases/gcc-8.2.0/gcc-8.2.0.tar.xz && \
     tar xvf gcc-*.xz && cd /data1/download/gcc-* && \
     ./contrib/download_prerequisites && \
     ./configure --enable-checking=release --enable-languages=c,c++ --disable-multilib && \
